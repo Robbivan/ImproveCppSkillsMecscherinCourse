@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.23)
+project(Mecha)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(Mecha main.cpp help_cpp_ref.cpp)
