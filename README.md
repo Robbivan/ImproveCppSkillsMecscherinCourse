@@ -1,2 +1,2 @@
 # ImproveCppSkillsMecscherinCourse
-I repeat and improve my skills. Here is the code from Meshcherin's C++ course :shipit:
+Improve my cpp skills. Here is the code from Meshcherin's C++ course :shipit:
