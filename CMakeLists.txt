@@ -3,4 +3,4 @@ project(Mecha)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Mecha main.cpp test.h)
+add_executable(Mecha main.cpp refferences.h)

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm> //sort
 #include <vector>
-#include "test.h"
+#include "refferences.h"
 
 
 // Функция компаратор по умолчанию
@@ -57,7 +57,7 @@ void vector_ref_work(){
 int main() {
     using std::cout;
     def_sort();
-    Hello();
+    root();
     vector_ref_work();
     return 0;
 }
