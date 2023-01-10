@@ -52,12 +52,6 @@ build CMakeFiles/Mecha.dir/main.cpp.o: CXX_COMPILER__Mecha_Debug /Users/Ivan/CLi
   OBJECT_DIR = CMakeFiles/Mecha.dir
   OBJECT_FILE_DIR = CMakeFiles/Mecha.dir
 
-build CMakeFiles/Mecha.dir/help_cpp_ref.cpp.o: CXX_COMPILER__Mecha_Debug /Users/Ivan/CLionProjects/Mecha/help_cpp_ref.cpp || cmake_object_order_depends_target_Mecha
-  DEP_FILE = CMakeFiles/Mecha.dir/help_cpp_ref.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
-  OBJECT_DIR = CMakeFiles/Mecha.dir
-  OBJECT_FILE_DIR = CMakeFiles/Mecha.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Mecha
@@ -66,7 +60,7 @@ build CMakeFiles/Mecha.dir/help_cpp_ref.cpp.o: CXX_COMPILER__Mecha_Debug /Users/
 #############################################
 # Link the executable Mecha
 
-build Mecha: CXX_EXECUTABLE_LINKER__Mecha_Debug CMakeFiles/Mecha.dir/main.cpp.o CMakeFiles/Mecha.dir/help_cpp_ref.cpp.o
+build Mecha: CXX_EXECUTABLE_LINKER__Mecha_Debug CMakeFiles/Mecha.dir/main.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/Mecha.dir
   POST_BUILD = :
