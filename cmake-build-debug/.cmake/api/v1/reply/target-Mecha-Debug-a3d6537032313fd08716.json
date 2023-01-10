@@ -89,7 +89,8 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -103,7 +104,12 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "test.h",
+			"path" : "references.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "consts.h",
 			"sourceGroupIndex" : 1
 		}
 	],

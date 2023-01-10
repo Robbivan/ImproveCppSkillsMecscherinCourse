@@ -1,8 +1,8 @@
 #include <iostream>
 #include <algorithm> //sort
-#include <vector>
-#include "refferences.h"
 
+#include "references.h" // файл с ссылками
+#include "consts.h" // файл с константами
 
 // Функция компаратор по умолчанию
 // Принимает аргументы:
@@ -24,40 +24,13 @@ void def_sort(){
     for (int i:a){
         cout<<i;
     }
-
-}
-
-void vector_ref_work(){
-    using std::vector;
-    vector<int> v = {1,2,3,5,6};
-    vector <int> vv = v; //дилемма (vv это другой вектор)?
-    // в Java, Python, C# это будут ссылки
-    // в Плюсах это КОПИЯ!
-    // чтобы была ссылка
-    vv[0]=0;
-    vector <int> &vvv =v;
-    vvv[0] =987;
-    cout<<vv[0]<<" Новый контейнер\n";
-    cout<<vvv[0]<<" Ссылка на v контейнер\n";
-    cout<<v[0]<<" Тут не меняли, но из-за vvv получилось = 987\n";
-//  Сделано, чтобы
-// {
-//  Если бы vv был бы указателем, то в таком виде
-// }
-// После выхода из namespace не понятно, что делать с "оригинальной" памятью, поэтому в cpp
-// это сделано для эффективности
-// Пришлось бы смотреть сколько ссылок указывает на объект в режиме runtime (так как в compile time не получится
-// по теореме Успенского-Райса) это называется сборка муссора (Garbage collection)
-// В Java, Python, C# не детерминировано, когда будет происходить удаление
-
-
 }
 
 
 int main() {
     using std::cout;
-    def_sort();
-    root();
-    vector_ref_work();
+    def_sort(); // из algorithm
+//
+    ref_root(); // из файла references
     return 0;
 }
