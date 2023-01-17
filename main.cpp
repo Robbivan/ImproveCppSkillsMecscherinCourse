@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm> //sort
-
 #include "references.h" // файл с ссылками
 #include "consts.h" // файл с константами
 
@@ -24,6 +23,26 @@ void def_sort(){
     for (int i:a){
         cout<<i;
     }
+}
+
+// Функция приведения типов
+void Casts(){
+    int x = 0;
+    double d = static_cast<double>(x); // Static cast, когда не знаете к какому типу, работает на этапе компиляции
+    // Запретные заклинания ():
+    // Reinterpret cast
+    double dd = 3.14;
+    cout<<std::hex<<reinterpret_cast<int&>(dd); // Берет старый (плохой вариант) - к ссылке
+    // Const cast
+    {
+        const int cx=1;
+    //  int& x = cx; не заработает, так как нельзя приводить копию на константный тип
+        int& x = const_cast<int&>(cx);
+    }
+    // С-style cast
+    // сразу все 3, что выше
+    // Сначала const cast, затем static cast, затем const+static cast, затем reinerpret cast, затем
+    // reinerpret+const cast, затем CE
 }
 
 
