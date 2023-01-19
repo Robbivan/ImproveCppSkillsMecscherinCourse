@@ -2,6 +2,7 @@
 #include <algorithm> //sort
 #include "references.h" // файл с ссылками
 #include "consts.h" // файл с константами
+#include "OOP.h"
 
 // Функция компаратор по умолчанию
 // Принимает аргументы:
@@ -23,13 +24,17 @@ void def_sort(){
     for (int i:a){
         cout<<i;
     }
+
+
 }
 
 // Функция приведения типов
 void Casts(){
     int x = 0;
     double d = static_cast<double>(x); // Static cast, когда не знаете к какому типу, работает на этапе компиляции
-    // Запретные заклинания ():
+
+
+    // Запретные заклинания:
     // Reinterpret cast
     double dd = 3.14;
     cout<<std::hex<<reinterpret_cast<int&>(dd); // Берет старый (плохой вариант) - к ссылке
@@ -43,13 +48,25 @@ void Casts(){
     // сразу все 3, что выше
     // Сначала const cast, затем static cast, затем const+static cast, затем reinerpret cast, затем
     // reinerpret+const cast, затем CE
+    {
+        int x =0;
+        double d = (double) x;
+    }
+    // dynamic cast - RunTime Error
 }
 
 
 int main() {
     using std::cout;
+
     def_sort(); // из algorithm
 //
     ref_root(); // из файла references
+
+
+    Bad_example example;
+    int some_value = 0;
+    example.print( some_value);
+
     return 0;
 }
