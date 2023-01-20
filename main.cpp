@@ -3,7 +3,8 @@
 #include "references.h" // файл с ссылками
 #include "consts.h" // файл с константами
 #include "OOP.h"
-
+#include "StringClass.h"
+#include "operators.h"
 // Функция компаратор по умолчанию
 // Принимает аргументы:
 // int a - число слева
@@ -67,6 +68,10 @@ int main() {
     Bad_example example;
     int some_value = 0;
     example.print( some_value);
+
+
+    on_string(); // Класс String
+    on_operator(); //Класс с комплексными числами и операторами
 
     return 0;
 }
