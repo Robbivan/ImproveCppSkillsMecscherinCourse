@@ -31,21 +31,6 @@ void C_ex::bit(int &x) {
 }
 
 
-// Конструкторы и деструкторы
-
-class String{
-private:
-    char*str= nullptr;
-    size_t sz=0;
-public:
-    String(size_t string_size, char symbol){
-        sz = string_size;
-        str = new char[sz];
-        for (size_t i=0;i<string_size;++i){
-            str[i] = symbol;
-        }
-    }
-};
 
 
 

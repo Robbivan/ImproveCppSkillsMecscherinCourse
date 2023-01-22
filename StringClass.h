@@ -76,6 +76,14 @@ public:
 String::~String(){
     delete[] str;
 };
+
+std::ostream& operator<<(std::ostream& out, const String& s){ //Поток не константный
+    for (size_t i= 0;i<s.get_size();++i){
+        out<<s[i];
+    }
+    return out;
+}
+
 void on_string(){
 //    String(10,'a');
 //    String(10);
