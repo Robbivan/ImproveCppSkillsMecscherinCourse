@@ -6,6 +6,7 @@
 #include "StringClass.h"
 #include "operators.h"
 #include "static_fields.h"
+
 // Функция компаратор по умолчанию
 // Принимает аргументы:
 // int a - число слева

@@ -1,0 +1,8 @@
+//
+// Created by Ivan on 26.01.2023.
+//
+
+#ifndef MECHA_EXPLICIT_METHODS_H
+#define MECHA_EXPLICIT_METHODS_H
+
+#endif //MECHA_EXPLICIT_METHODS_H

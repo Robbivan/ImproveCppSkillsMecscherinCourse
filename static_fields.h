@@ -9,6 +9,8 @@ int ex::val =1; //чтобы к нему обратиться не нужно и
 
 
 
+
+
 void on_stat(){
     using std::cout;
     cout<<ex::val;
