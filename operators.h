@@ -1,6 +1,5 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
+
 
 class Complex{
 private:
@@ -43,25 +42,13 @@ Complex operator+(const Complex& a,const Complex& b){
     return copy;
 }
 
-//функциональный класс, его объект функтор
-// Callback
-struct GreaterThanZero{
-    bool operator()(int x){
-        return x>0;
-    }
-};
+
 
 void on_operator() {
     Complex c(2.0);
     Complex d(3.0,1.0);
     1.0 + c;
     Complex sum = c + d; // А тут нет копии, так как оптимизация copy elision C++11-17
-
-    std::vector<int>v{1,2,6,3,4};
-
-    std::find(v.begin(),v.end(),4); //впервые встречается 4
-    std::find_if(v.begin(),v.end(),GreaterThanZero());
-
 }
 
 
