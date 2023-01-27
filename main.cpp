@@ -6,6 +6,7 @@
 #include "StringClass.h"
 #include "operators.h"
 #include "static_fields.h"
+#include "explicit-methods.h"
 
 // Функция компаратор по умолчанию
 // Принимает аргументы:
@@ -74,6 +75,7 @@ int main() {
 
     on_string(); // Класс String
     on_operator(); //Класс с комплексными числами и операторами
+    on_explicit();
 
     return 0;
 }

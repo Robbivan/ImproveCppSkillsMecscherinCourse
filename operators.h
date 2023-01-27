@@ -22,17 +22,17 @@ public:
         *this +=1;
         return *this;
     }
-    Complex& operator++(int){ //Костыль Страуструпа, тут еще очень хорошо видно, что возвращается именно копия не увел на 1
-        Complex copy = *this;
-        ++*this;
-        return copy;
-    }
-    bool operator<(const Complex& a,const Complex& b){
-        return a.re*a.re<b.re*b.re;
-    }
-    bool operator>(const Complex& a,const Complex& b){
-        return b<a;
-    }
+//    Complex& operator++(int){ //Костыль Страуструпа, тут еще очень хорошо видно, что возвращается именно копия не увел на 1
+//        Complex copy = *this;
+//        ++*this;
+//        return copy;
+//    }
+//    bool operator<(const Complex& a,const Complex& b){
+//        return a.re*a.re<b.re*b.re;
+//    }
+//    bool operator>(const Complex& a,const Complex& b){
+//        return b<a;
+//    }
 };
 
 Complex operator+(const Complex& a,const Complex& b){
@@ -42,7 +42,6 @@ Complex operator+(const Complex& a,const Complex& b){
 }
 
 void on_operator() {
-    std::cout << "Hello, World!" << std::endl;
     Complex c(2.0);
     Complex d(3.0,1.0);
 

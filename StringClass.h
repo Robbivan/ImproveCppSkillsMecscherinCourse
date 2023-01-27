@@ -12,7 +12,7 @@ public:
     String()=default;
     String(int n) = delete; // Запрет для int
 
-    String(size_t string_size, char symbol = '\0'):str(new char(sz),sz(string_size)){
+    String(size_t string_size, char symbol = '\0'):str(new char(sz)), sz(string_size){
 //        sz = string_size; чтобы не присваивать в конструкторе нужно инициализировать до
 //        str = new char[sz];
         memset(str,symbol,sz); // установка вместо for
