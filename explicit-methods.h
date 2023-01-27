@@ -6,7 +6,7 @@ private:
 public:
     explicit UserId(int id):id(id){}
 
-    explicit operator int(){
+    explicit operator int(){ //с++11
         return id;
     }
 };
@@ -21,10 +21,16 @@ public:
     }
 };
 
+// c++11 перегрузка нижнего литерала
+UserId operator ""_uid(unsigned long long x){
+    return UserId(x);
+};
 
 
 void on_explicit(){
     UserId id(5);// UserId id = 5 уже не прокатит
+    UserId uid = 5_uid;
+
 
     //    std::cout<<'\n'<<id+5; из-за запрета на неявное приведение типов explicit
     // в if (){ } не работает explicit
