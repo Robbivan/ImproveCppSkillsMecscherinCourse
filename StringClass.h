@@ -33,7 +33,7 @@ public:
 
     // Для str = {'a','b','c'}
     String(std::initializer_list<char> lst){
-        lst.size();
+        sz = lst.size();
         str = new char[sz];
         std::copy(lst.begin(),lst.end(),str);
     }

@@ -1,0 +1,8 @@
+//
+// Created by Ivan on 30.01.2023.
+//
+
+#ifndef MECHA_MULTIPLE_INHERITANCE_H
+#define MECHA_MULTIPLE_INHERITANCE_H
+
+#endif //MECHA_MULTIPLE_INHERITANCE_H
