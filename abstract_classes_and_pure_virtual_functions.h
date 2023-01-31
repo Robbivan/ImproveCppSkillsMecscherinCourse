@@ -15,5 +15,5 @@ public:
 void on_abstract_class(){
     Triange tr;
     Shape& s =tr;
-    std::cout<<s.area(); //вызовится для квадрата
+    std::cout<<s.area(); //вызовится для квадратач
 }

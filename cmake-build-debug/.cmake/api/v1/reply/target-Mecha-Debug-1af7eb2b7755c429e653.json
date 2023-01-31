@@ -102,7 +102,8 @@
 				11,
 				12,
 				13,
-				14
+				14,
+				15
 			]
 		}
 	],
@@ -182,6 +183,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "abstract_classes_and_pure_virtual_functions.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "virtual_destructor.h",
 			"sourceGroupIndex" : 1
 		}
 	],
