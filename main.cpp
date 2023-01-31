@@ -10,6 +10,7 @@
 #include "explicit-methods.h"
 #include "callback_functors_comparators.h"
 #include "multiple_inheritance.h"
+#include "virtual_inheritance.h"
 
 // Функция компаратор по умолчанию
 // Принимает аргументы:
@@ -81,6 +82,7 @@ int main() {
     on_explicit();
     on_func();
     on_miltiple_inheritance();
+    on_virtual_inheritance();
 
     return 0;
 }

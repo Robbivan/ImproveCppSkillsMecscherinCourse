@@ -99,7 +99,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
@@ -164,6 +165,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "multiple_inheritance.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "virtual_inheritance.h",
 			"sourceGroupIndex" : 1
 		}
 	],

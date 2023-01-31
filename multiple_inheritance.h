@@ -34,6 +34,4 @@ void on_miltiple_inheritance(){
     std::cout<<s.Mother::f;
 
 
-
-
 }
