@@ -23,7 +23,7 @@ struct Base{
 
         std::cout<<"1";
     }
-//    virtual void f() const final{ // если хотим запретить переопределение
+//    virtual void f() const final{ // если хотим запретить переопределение дальше по наследникам
 //
 //        std::cout<<"1";
 //    }

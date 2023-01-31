@@ -33,5 +33,9 @@ void on_miltiple_inheritance(){
 
     std::cout<<s.Mother::f;
 
+    Mother m;
+    //    dynamic_cast<Son&>(m); каст вниз - нельзя
+    std::cout<<(typeid(m)==typeid(s));
+
 
 }

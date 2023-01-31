@@ -84,5 +84,7 @@ int main() {
     on_miltiple_inheritance();
     on_virtual_inheritance();
 
+    std::cout<<'\n'<<typeid(example).name();
+
     return 0;
 }
