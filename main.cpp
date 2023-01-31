@@ -3,11 +3,13 @@
 #include "references.h" // файл с ссылками
 #include "consts.h" // файл с константами
 #include "OOP.h"
+#include "OOP2.h"
 #include "StringClass.h"
 #include "operators.h"
 #include "static_fields.h"
 #include "explicit-methods.h"
 #include "callback_functors_comparators.h"
+#include "multiple_inheritance.h"
 
 // Функция компаратор по умолчанию
 // Принимает аргументы:
@@ -78,6 +80,7 @@ int main() {
     on_operator(); //Класс с комплексными числами и операторами
     on_explicit();
     on_func();
+    on_miltiple_inheritance();
 
     return 0;
 }
