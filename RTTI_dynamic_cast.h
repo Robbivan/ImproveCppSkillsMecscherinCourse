@@ -3,8 +3,6 @@
 // RTTI = Run-Time Type Information
 // Компилятор сохраняет информацию о типе, соот. не нужно поле type = 1 или type = 2
 
-
-
 struct Base{
     virtual ~Base(){}
     virtual void f(){
