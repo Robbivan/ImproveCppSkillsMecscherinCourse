@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <vector>
 //template <typename T>
 //const T& maximum(const T& a, const T& b){
 //    return a>b?a:b;
@@ -35,8 +36,6 @@ using mymap = std::map<T,T>;
 // С++14
 template <typename T>
 const T pi = 3.14;
-
-
 
 void on_template_intro() {
     maximum(1,2);
