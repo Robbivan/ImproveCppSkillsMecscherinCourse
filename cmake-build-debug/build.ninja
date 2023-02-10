@@ -70,6 +70,12 @@ build CMakeFiles/Mecha.dir/Templates/non_type_templates_parametrs.cpp.o: CXX_COM
   OBJECT_DIR = CMakeFiles/Mecha.dir
   OBJECT_FILE_DIR = CMakeFiles/Mecha.dir/Templates
 
+build CMakeFiles/Mecha.dir/Templates/dependent_names.cpp.o: CXX_COMPILER__Mecha_Debug /Users/Ivan/CLionProjects/Mecha/Templates/dependent_names.cpp || cmake_object_order_depends_target_Mecha
+  DEP_FILE = CMakeFiles/Mecha.dir/Templates/dependent_names.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Mecha.dir
+  OBJECT_FILE_DIR = CMakeFiles/Mecha.dir/Templates
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Mecha
@@ -78,7 +84,7 @@ build CMakeFiles/Mecha.dir/Templates/non_type_templates_parametrs.cpp.o: CXX_COM
 #############################################
 # Link the executable Mecha
 
-build Mecha: CXX_EXECUTABLE_LINKER__Mecha_Debug CMakeFiles/Mecha.dir/main.cpp.o CMakeFiles/Mecha.dir/Templates/template_overloading.cpp.o CMakeFiles/Mecha.dir/Templates/template_specialization.cpp.o CMakeFiles/Mecha.dir/Templates/non_type_templates_parametrs.cpp.o
+build Mecha: CXX_EXECUTABLE_LINKER__Mecha_Debug CMakeFiles/Mecha.dir/main.cpp.o CMakeFiles/Mecha.dir/Templates/template_overloading.cpp.o CMakeFiles/Mecha.dir/Templates/template_specialization.cpp.o CMakeFiles/Mecha.dir/Templates/non_type_templates_parametrs.cpp.o CMakeFiles/Mecha.dir/Templates/dependent_names.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/Mecha.dir
   POST_BUILD = :

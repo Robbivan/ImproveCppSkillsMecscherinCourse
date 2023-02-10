@@ -52,7 +52,8 @@
 				0,
 				18,
 				19,
-				20
+				20,
+				21
 			]
 		}
 	],
@@ -88,7 +89,8 @@
 				0,
 				18,
 				19,
-				20
+				20,
+				21
 			]
 		},
 		{
@@ -224,6 +226,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Templates/non_type_templates_parametrs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Templates/dependent_names.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
