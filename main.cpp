@@ -61,6 +61,9 @@ void Casts(){
         double d = (double) x;
     }
     // dynamic cast - RunTime Error
+//    friend void f(int) в теле класса
+//    friend void A::f(int) //тут мещерин
+
 }
 
 
