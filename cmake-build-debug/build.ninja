@@ -106,6 +106,12 @@ build CMakeFiles/Mecha.dir/Exceptions/exceptions.cpp.o: CXX_COMPILER__Mecha_Debu
   OBJECT_DIR = CMakeFiles/Mecha.dir
   OBJECT_FILE_DIR = CMakeFiles/Mecha.dir/Exceptions
 
+build CMakeFiles/Mecha.dir/Exceptions/exceptions_catch.cpp.o: CXX_COMPILER__Mecha_Debug /Users/Ivan/CLionProjects/Mecha/Exceptions/exceptions_catch.cpp || cmake_object_order_depends_target_Mecha
+  DEP_FILE = CMakeFiles/Mecha.dir/Exceptions/exceptions_catch.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Mecha.dir
+  OBJECT_FILE_DIR = CMakeFiles/Mecha.dir/Exceptions
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Mecha
@@ -114,7 +120,7 @@ build CMakeFiles/Mecha.dir/Exceptions/exceptions.cpp.o: CXX_COMPILER__Mecha_Debu
 #############################################
 # Link the executable Mecha
 
-build Mecha: CXX_EXECUTABLE_LINKER__Mecha_Debug CMakeFiles/Mecha.dir/main.cpp.o CMakeFiles/Mecha.dir/Templates/template_overloading.cpp.o CMakeFiles/Mecha.dir/Templates/template_specialization.cpp.o CMakeFiles/Mecha.dir/Templates/non_type_templates_parametrs.cpp.o CMakeFiles/Mecha.dir/Templates/dependent_names_problem.cpp.o CMakeFiles/Mecha.dir/Templates/type_traits_and_metafunctions.cpp.o CMakeFiles/Mecha.dir/testcl.cpp.o CMakeFiles/Mecha.dir/Templates/variadic_templates.cpp.o CMakeFiles/Mecha.dir/Templates/template_deduction_rules.cpp.o CMakeFiles/Mecha.dir/Exceptions/exceptions.cpp.o
+build Mecha: CXX_EXECUTABLE_LINKER__Mecha_Debug CMakeFiles/Mecha.dir/main.cpp.o CMakeFiles/Mecha.dir/Templates/template_overloading.cpp.o CMakeFiles/Mecha.dir/Templates/template_specialization.cpp.o CMakeFiles/Mecha.dir/Templates/non_type_templates_parametrs.cpp.o CMakeFiles/Mecha.dir/Templates/dependent_names_problem.cpp.o CMakeFiles/Mecha.dir/Templates/type_traits_and_metafunctions.cpp.o CMakeFiles/Mecha.dir/testcl.cpp.o CMakeFiles/Mecha.dir/Templates/variadic_templates.cpp.o CMakeFiles/Mecha.dir/Templates/template_deduction_rules.cpp.o CMakeFiles/Mecha.dir/Exceptions/exceptions.cpp.o CMakeFiles/Mecha.dir/Exceptions/exceptions_catch.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/Mecha.dir
   POST_BUILD = :
