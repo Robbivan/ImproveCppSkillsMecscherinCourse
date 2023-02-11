@@ -54,7 +54,10 @@
 				19,
 				20,
 				21,
-				22
+				22,
+				23,
+				24,
+				25
 			]
 		}
 	],
@@ -92,7 +95,10 @@
 				19,
 				20,
 				21,
-				22
+				22,
+				23,
+				24,
+				25
 			]
 		},
 		{
@@ -239,7 +245,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Templates/type_traits.cpp",
+			"path" : "Templates/type_traits_and_metafunctions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "testcl.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Templates/variadic_templates.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Templates/template_deduction_rules.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

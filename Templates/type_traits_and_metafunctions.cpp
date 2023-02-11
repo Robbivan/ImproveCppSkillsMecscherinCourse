@@ -26,6 +26,11 @@ struct remove_const<const T>{
     using type = T;
 };
 
+template <typename T>
+struct remove_const<T&>{
+    using type = T;
+};
+
 //std::decay<T>::type; // делает все: меняет [] на *, снимает константность и тд
 
 template <typename U, typename V>
@@ -34,7 +39,7 @@ void f(U x, V y){
     //...
     typename remove_const<U>::type a;
     // используются метафункции
-    if (is_same<U,V>::value){
+    if (is_same<U,V>::value){ // C++17 is_same_v<U,V>
     }else{
         //...
     }
@@ -47,9 +52,20 @@ class C{
     };
 
 
+// since C++14
+template <typename T>
+using remove_const_t = typename remove_const<T>::type;
+// и тд.
+
+
+// since C++17
+template <typename U, typename V>
+const bool is_same_v = is_same<U,V>::value;
+
+
+
+
 int main(){
-    C<typename std::decay<int*[10][10]>::type> x;
+//    C<typename std::decay<int*[10][10]>::type> x;
     int *a[10];
 }
-
-
