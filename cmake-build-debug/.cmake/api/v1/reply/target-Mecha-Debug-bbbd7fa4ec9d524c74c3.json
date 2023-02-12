@@ -59,7 +59,8 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28
 			]
 		}
 	],
@@ -102,7 +103,8 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28
 			]
 		},
 		{
@@ -280,6 +282,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Exceptions/exceptions_catch.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Exceptions/exceptions_in_constructors.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
