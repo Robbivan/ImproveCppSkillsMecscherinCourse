@@ -1,3 +1,0 @@
-/Users/Ivan/CLionProjects/Mecha/cmake-build-debug/CMakeFiles/Mecha.dir
-/Users/Ivan/CLionProjects/Mecha/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Ivan/CLionProjects/Mecha/cmake-build-debug/CMakeFiles/rebuild_cache.dir

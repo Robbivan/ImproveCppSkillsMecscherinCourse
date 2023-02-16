@@ -36,8 +36,8 @@ int main(){
 
 //    std::out_of_range; //для at у вектора
     try{
-        std::vector<int> v(10); // не поймать, так как нет if, как в питоне или java
-        v.at(10000) =1;
+        std::vector<int> v(10);
+        v[10000] =1;// нельзя поймать без throw
     }
     catch (...){
 //        std::cout<<"bad vector";
@@ -45,13 +45,12 @@ int main(){
 
     try{
         std::vector<int> v(10); // не поймать, так как нет if, как в питоне или java
+
+        v.at(10000) =1; //at позволяет безопасно обращаться к памяти
         throw std::out_of_range("message");
-        v.at(10000) =1;
     }
     catch (std::exception& ex){
         std::cout<<ex.what();
     };
-
-    s
 
 }
