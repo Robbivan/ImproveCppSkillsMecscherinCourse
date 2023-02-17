@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <vector>
 // RAII
 // Resource acquisition is initialization:
 // Захват ресурса через создание объекта владельца-ресурса
@@ -16,6 +16,16 @@ public:
     Smartptr(T* _ptr):ptr(_ptr){}
     ~Smartptr(){
         delete ptr;
+    }
+};
+
+struct SS{
+    int x =0;
+    SS(int x):x(x){};
+    SS(const SS& s):x(s.x){
+        if (x==8){
+            throw 1;
+        }
     }
 };
 
@@ -38,6 +48,13 @@ void f(){
 //    delete p; //так как сработает throw, то будет утечка памяти
 }
 int main(){
+    std::vector<SS> v;
+    for (int i = 0; i < 100; ++i) {
+        v.push_back(SS(i)); // вектор умеет доопределять память
+    }
+
+
+
     try{
 //        f();
         S s;
