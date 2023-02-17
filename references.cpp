@@ -60,7 +60,7 @@ void swap(int& x, int& y)
 }
 
 using std::cout;
-void ref_root(){
+int main(){
     cout<<"HELLO\n";
     int x = 2,y = 4;
     std::cout<<x<<y<<'\n';

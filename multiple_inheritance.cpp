@@ -21,7 +21,7 @@ struct Son : public Mother, public Father {
 
 
 
-void on_miltiple_inheritance() {
+int main() {
     Son s;
     std::cout << '\n' << &s << '\n';
     Father *pf = &s;

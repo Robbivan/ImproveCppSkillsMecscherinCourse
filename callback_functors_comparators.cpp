@@ -19,7 +19,7 @@ struct Compare{
 };
 
 
-void on_func(){
+int main(){
     std::vector<int>v{-1,2,6,3,4};
 
     std::find(v.begin(),v.end(),4); //впервые встречается 4

@@ -12,7 +12,7 @@ public:
     }
 };
 
-void on_abstract_class(){
+int main(){
     Triange tr;
     Shape& s =tr;
     std::cout<<s.area(); //вызовится для квадратач

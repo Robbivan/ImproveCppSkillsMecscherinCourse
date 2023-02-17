@@ -27,7 +27,7 @@ UserId operator ""_uid(unsigned long long x){
 };
 
 
-void on_explicit(){
+int main(){
     UserId id(5);// UserId id = 5 уже не прокатит
     UserId uid = 5_uid;
 

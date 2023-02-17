@@ -28,7 +28,7 @@ struct Derived: public Base{
         delete b;
     }
 };
-void on_virtual_destructor(){
+int main(){
     Base* b = new Derived(); //создание наследника по родителю
     GrandBase * gb =new Derived;
     delete b;

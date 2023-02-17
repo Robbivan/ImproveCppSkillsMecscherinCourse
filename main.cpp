@@ -1,16 +1,6 @@
 #include <iostream>
 #include <algorithm> //sort
-#include "references.h" // файл с ссылками
-#include "consts.h" // файл с константами
-#include "OOP.h"
-#include "OOP2.h"
-#include "StringClass.h"
-#include "operators.h"
-#include "static_fields.h"
-#include "explicit-methods.h"
-#include "callback_functors_comparators.h"
-#include "multiple_inheritance.h"
-#include "virtual_inheritance.h"
+
 
 // Функция компаратор по умолчанию
 // Принимает аргументы:
@@ -69,25 +59,6 @@ void Casts(){
 
 int main() {
     using std::cout;
-
     def_sort(); // из algorithm
-//
-    ref_root(); // из файла references
-
-
-    Bad_example example;
-    int some_value = 0;
-    example.print( some_value);
-
-
-    on_string(); // Класс String
-    on_operator(); //Класс с комплексными числами и операторами
-    on_explicit();
-    on_func();
-    on_miltiple_inheritance();
-    on_virtual_inheritance();
-
-    std::cout<<'\n'<<typeid(example).name();
-
     return 0;
 }

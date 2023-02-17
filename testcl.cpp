@@ -41,7 +41,4 @@ int main(){
     Base base_newest(2,3,4);
     base_newest = base_old;
     std::cout<<base_newest.a;
-
-
-
 }

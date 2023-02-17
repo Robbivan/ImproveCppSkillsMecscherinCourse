@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 
 //size_t find(std::string text, std::string str){
 //    // ... плохо, так как локальные копии
@@ -10,7 +11,7 @@ size_t find(const std::string& text, const std::string& str){
     //
     return 0;
 }
-void consts(){
+int main(){
     const int x =0;
     const std::vector<int> v = {1,2,3,4,5}; // сортировать тоже нельзя
     // для констант нельзя выполнять неконстантные операции

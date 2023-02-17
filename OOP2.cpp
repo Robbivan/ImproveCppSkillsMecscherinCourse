@@ -1,3 +1,4 @@
+#include <iostream>
 class Base{
 
 };
@@ -7,7 +8,7 @@ class Derived: public Base{ // private, то запретить cast от род
 
 };
 
-void on_oop_2(){
+int main(){
     Derived d;
     Base& b = d;
 

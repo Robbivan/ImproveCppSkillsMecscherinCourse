@@ -1,3 +1,4 @@
+#include <iostream>
 struct GrannyBv{
     int g = 0;
 };
@@ -17,7 +18,7 @@ struct Sonv:public Mother, public Father{
 // без virtual   [g] [m] [g] [f] [s] 20 байт
 // c virtual [m_ptr] [m] [f_ptr] [f] [s] [g]
 
-void on_virtual_inheritance(){
+int main(){
     Sonv s;
     // Если виртуальное наследование, то строго одно копия предка
     // GrannyBv& g =s; так не будет нормально кастоваться при virtual

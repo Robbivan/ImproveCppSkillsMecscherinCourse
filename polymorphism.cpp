@@ -41,7 +41,7 @@ struct Derived:public Base{
 // начиная с с++11 лучше писать override, чтобы явно показать, что функция переопределена и были если что заметны ошибки
 // типов при компиляции (если они есть)
 
-void on_polymorphism(){
+int main(){
     Base b;
     b.f();
     Derived d;

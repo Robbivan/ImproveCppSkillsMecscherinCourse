@@ -84,7 +84,7 @@ std::ostream& operator<<(std::ostream& out, const String& s){ //Поток не 
     return out;
 }
 
-void on_string(){
+int main(){
 //    String(10,'a');
 //    String(10);
     {

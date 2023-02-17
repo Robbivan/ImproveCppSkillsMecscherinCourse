@@ -1,3 +1,4 @@
+#include <iostream>
 struct Bad_example{
 private:
     int x =0;
@@ -59,7 +60,7 @@ struct Mom: public Granny
     }
 };
 
-void mum_and_gran(){
+int main(){
     Mom m;
     cout<<m.a;
     cout<<m.Granny::a;

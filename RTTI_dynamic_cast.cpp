@@ -16,7 +16,7 @@ struct Derived:public Base{
     }
 };
 
-void on_RTTI(){
+int main(){
     int x;
     std::cin>>x;
 

@@ -44,7 +44,7 @@ Complex operator+(const Complex& a,const Complex& b){
 
 
 
-void on_operator() {
+int main() {
     Complex c(2.0);
     Complex d(3.0,1.0);
     1.0 + c;
