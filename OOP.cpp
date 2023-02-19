@@ -56,14 +56,14 @@ struct Mom: public Granny
 
     int a = 1;
     void f(){
-        cout<<"Mom";
+        std::cout<<"Mom";
     }
 };
 
 int main(){
     Mom m;
-    cout<<m.a;
-    cout<<m.Granny::a;
+    std::cout<<m.a;
+    std::cout<<m.Granny::a;
 
 }
 
