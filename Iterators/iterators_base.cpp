@@ -34,7 +34,7 @@ int main(){
         std::cout<<*iter;
     }
 
-    //C++11
+    //since C++11
     for (int x: lit){  // близко к итераторам по логике
         std::cout<<x;
     }
@@ -48,9 +48,9 @@ int main(){
     std::map<int,int> ::iterator it1 = m.find(3);
     std::map<int,int> ::iterator it2 = m.find(5);
 
-//    if (it1<it2){ так будет ошибка, так как нет такой операции над bider
+//    if (it1<it2){ так будет ошибка, так как нет такой операции над bidirectional
 //
 //    }
-// it1+=1 - тоже нельзя, так как тоже нет такой операции
+//    it1+=1 - тоже нельзя, так как тоже нет такой операции
 
 }
