@@ -1,18 +1,18 @@
 #include <iostream>
-struct GrannyBv{
+struct GrannyB{
     int g = 0;
 };
 
-struct Motherv:public virtual GrannyB{
-    int m=1;
+struct Mother:public virtual GrannyB{
+    int f=1;
 };
 
-struct Fatherv:public virtual GrannyB{
+struct Father:public virtual GrannyB{
     int f=2;
 };
 
 struct Sonv:public Mother, public Father{
-    int s = 3;
+    int k = 3;
 };
 
 // без virtual   [g] [m] [g] [f] [s] 20 байт
@@ -20,7 +20,11 @@ struct Sonv:public Mother, public Father{
 
 int main(){
     Sonv s;
-    // Если виртуальное наследование, то строго одно копия предка
+    s.Father::f;
+    // поле g содержится дважды без virtual
+    // Если виртуальное наследование, то строго одно копия предка Бабушки
+    // у сына теперь одна копия бабушки
+
     // GrannyBv& g =s; так не будет нормально кастоваться при virtual
 
     // Если сделать отца невиртуальным, а мать виртуальным, то
