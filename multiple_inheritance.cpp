@@ -18,7 +18,7 @@ struct Son : public Mother, public Father {
     int s = 3;
 };
 
-
+// Ромбовидное наследование - решение через virtual inheritance (virtual inheritance.cpp)
 
 
 int main() {
