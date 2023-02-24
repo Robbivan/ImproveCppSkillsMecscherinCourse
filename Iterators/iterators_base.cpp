@@ -20,7 +20,7 @@
 // двунаправленные Bidirectional, Операции: ++, --
 // например list, map, set
 //
-// Random access iterator, Операции: ++, --, it1-it2, it1>it2
+// Random access common_iterator, Операции: ++, --, it1-it2, it1>it2
 // например vector, deque
 
 int main(){
