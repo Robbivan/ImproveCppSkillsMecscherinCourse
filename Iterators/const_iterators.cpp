@@ -2,6 +2,23 @@
 #include <list>
 
 
+//const iterators
+
+
+
+// "ручная" реализация std::conditional()
+template <bool B, typename T, typename F>
+struct conditional{
+    using type = F;
+};
+
+template <typename T, typename F>
+struct conditional<true,T,F>{
+    using type = T;
+};
+
+template <bool B, typename T, typename F>
+using conditional_t = typename conditional<B,T,F>::type;
 
 
 
@@ -34,6 +51,10 @@ public:
 
 
     };
+
+    using common_it = common_iterator<true>; //объявление ручного создание итератора
+    using const_it = common_iterator<false>;
+
 
     template<bool IsConst>
     common_iterator<IsConst> begin() const{
