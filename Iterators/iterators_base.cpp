@@ -27,7 +27,7 @@ int main(){
     std::vector<int> v = {1,2,3,4,5};
     std::vector<int>::iterator it =v.begin();
     std::list<int> lit = {1,2,3,4,5};
-
+    std::make_
     *it;
     //since C++11 можно использовать auto для iter
     for(std::vector<int>::iterator iter =v.begin();iter!=v.end();++iter){

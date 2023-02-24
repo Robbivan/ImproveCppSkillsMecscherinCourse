@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <vector>
 
 
 //const iterators
@@ -19,6 +20,9 @@ struct conditional<true,T,F>{
 
 template <bool B, typename T, typename F>
 using conditional_t = typename conditional<B,T,F>::type;
+
+template < typename Iterator>
+class reverse_iterator;
 
 
 
@@ -65,19 +69,46 @@ public:
     common_iterator<IsConst> end() const{
         return common_iterator(std::conditional<IsConst, const T*,T*> (arr+sz));
     }
-
+//    using reverse_iterator = std::reverse_iterator<iterator>;
+    template < typename Iterator>
+    reverse_iterator<Iterator> rbegin() const{
+        return reverse_iterator(arr+sz-1);
+    }
+    template < typename Iterator>
+    reverse_iterator<Iterator> rend() const {
+        return reverse_iterator(arr - 1);
+    }
 };
 
+// Reverse iterator
+// Если есть bidirectional операторы, то есть и reverse iterator
+// делает наоборот для оператора
+template < typename Iterator>
+class reverse_iterator{
+    Iterator iter;
+    reverse_iterator(const Iterator& iter):iter(iter){}
+    reverse_iterator<Iterator>&operator++(){
+        --iter;
+        return *this;
+    }
 
+    Iterator base() const{ //с помощью base можно вернуть обычный итератор
+        return iter;
+    }
+};
 
 
 int main(){
     std::list<int> lst = {1,2,3,4};
-    int *y;
-    int*x = y;
-    int *z;
+
+    std::vector<int> v;
+    for (auto it = lst.rbegin(); it!=lst.rend();++it){ //последний элемент
+        std::cout<<*it;
+    }
+
+
 
 //    если const std::list<int> lst = {1,2,3,4};, то lst.begin(); будет автоматически const common_iterator
-    std::list<int>::const_iterator iter = lst.cbegin();
+//    std::list<int>::const_iterator iter = lst.cbegin();
 //    *lst =2; --ошибка компиляции
 }
