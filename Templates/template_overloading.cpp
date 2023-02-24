@@ -9,7 +9,7 @@ void foo(T x, U y){
 //2. Лучше найти полное соответствие, чем приводить тип
 template <typename T>
 void foo(T x, T y){
-    std::cout<<3;
+    std::cout<<2;
 }
 
 void foo(int x, double y){
