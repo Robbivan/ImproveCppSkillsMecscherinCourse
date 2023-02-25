@@ -25,7 +25,7 @@ public:
     back_insert_iterator<Container>& operator*(){
         return *this;
     }
-    back_insert_iterator<Container>& operator=(const Container::value_type& value){
+    back_insert_iterator<Container>& operator=(const typename Container::value_type& value){
         container.push_back(value);
         return *this;
     }
@@ -47,6 +47,5 @@ int main(){
     // Правильно использовать back_inserter
     std::copy_if(lst.begin(),lst.end(),std::back_inserter(v),IsEven());
     // back_inserter создает back_inserter итератор (выше написан)
-
-
+    // существуют также front_inserter и просто inserter
 }
