@@ -4,8 +4,9 @@
 #include <list>
 #include <forward_list>
 
+
 /// Sequence
-/// containers
+/// Containers
 
 // vector operation
 // в динамике
@@ -35,4 +36,5 @@ int main(){
     for (auto iter : f_lst){
         std::cout<<iter<<' ';
     }
+    f_lst.pop_front();
 }
