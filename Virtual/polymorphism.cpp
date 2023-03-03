@@ -41,6 +41,22 @@ struct Derived:public Base{
 // начиная с с++11 лучше писать override, чтобы явно показать, что функция переопределена и были если что заметны ошибки
 // типов при компиляции (если они есть)
 
+// Пример для общего использования virtual
+// выше классы с виртуальными методами speak и getname
+//void report(Animal &animal)
+//{
+//    std::cout << animal.getName() << " says " << animal.speak() << '\n';
+//}
+//
+//int main()
+//{
+//    Cat cat("Matros");
+//    Dog dog("Barsik");
+//
+//    report(cat);
+//    report(dog);
+//}
+
 int main(){
     Base b;
     b.f();
