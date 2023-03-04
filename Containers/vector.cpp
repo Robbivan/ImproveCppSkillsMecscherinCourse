@@ -34,27 +34,56 @@ public:
     }
 
     void resize(size_t n, const T& value = T()){
-
+        if(n < cap){
+            reserve(cap);
+        }
     }
+
     size_t size() const{
         return sz;
     }
+
     size_t capacity() const{
         return cap;
     }
+
     void reserve(size_t n){
-        if(n <= cap){
+        if(n < cap){
             return;
         }
-        T* newarr = reinterpret_cast<T*>(new int8_t *[n*sizeof(T)]);
-        for (size_t i = 0; i < sz; ++i){
-            new(newarr+i) T(arr[i]); //вызов конструктора по new, так как еще нет конкретных обхектов
+        if (n==cap){
+            //
         }
+        T* newarr = reinterpret_cast<T*>(new int8_t *[n*sizeof(T)]);
+
+        // В стандартной библиотеке это
+        try{
+            std::uninitialized_copy(arr,arr+sz, newarr);
+        }
+        catch (...){
+            delete reinterpret_cast<int8_t*>(newarr);
+            throw;
+        }
+        /*size_t i = 0;
+        try{
+            for (; i < sz; ++i){
+                new(newarr+i) T(arr[i]); //вызов конструктора по new, так как еще нет конкретных обхектов
+            }
+        }
+        catch (...){
+            for (size_t j = 0;j < i; ++j){
+                (newarr+i)->~T();
+            }
+            delete reinterpret_cast<int8_t*>(newarr);
+            throw;
+        }*/
+
         for (size_t i = 0; i < sz; ++i){
             (arr+i)->~T();
         }
         delete reinterpret_cast<int8_t*>(newarr);
     }
+
     void push_back(const T& value){
         if (sz ==cap){
             reserve(2*cap);
@@ -73,6 +102,24 @@ public:
 
 };
 
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+// Vector <bool>
+// bool - это 1 байт,
+// а можно сделать, чтобы в vector это был 1 бит, то есть хранить по 8 бит bool равных 1 байту
+template <>
+class Vector<bool>{
+
+};
+
+template <f
+
+
+
+
 int main(){
     std::vector<int> v;
     for (int i = 0 ;i < 25;++i){
@@ -88,6 +135,9 @@ int main(){
 
     }
     v.clear(); // убирает все элементы из вектора, но capacity остается
+
+    std::vector<bool> vb(10,false);
+    vb[5] = true;
 
 
 }

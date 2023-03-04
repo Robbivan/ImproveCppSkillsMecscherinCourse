@@ -8,6 +8,8 @@ void print(const Head& head, const Tail&... tail ){
     std::cout<<sizeof...(tail); //размер пакета
     print(tail...);
 }
+
+
 template <typename First, typename Second, typename ...Types>
 struct is_homogeneous;
 
