@@ -62,10 +62,10 @@ public:
     size_t get_size() const{
         return sz;
     }
-    const char& operator[](size_t index) const{ //Теперь перегрузка операторов
+    const char& operator[](size_t index) const{ // перегрузка операторов индексации для const
         return str[index];
     }
-    char& operator[](size_t index){
+    char& operator[](size_t index){ // перегрузка операторов индексации
         return str[index];
     }
     ~String();

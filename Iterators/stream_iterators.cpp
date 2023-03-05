@@ -50,6 +50,4 @@ int main(){
     std::copy(v.begin(),v.end(), std::ostream_iterator<int>(std::cout, " "));
     // аналог вывода с копированием результата в ostream поток
 //    std::ostream_iterator;
-    /// Some documentation example Jet Brains
-    ///
 }
