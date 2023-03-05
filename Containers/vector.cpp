@@ -112,10 +112,34 @@ public:
 // а можно сделать, чтобы в vector это был 1 бит, то есть хранить по 8 бит bool равных 1 байту
 template <>
 class Vector<bool>{
+    int8_t* arr;
+    size_t sz;
+    size_t cap;
+    struct BitReference{
+        int8_t *cell;
+        uint8_t num;
+//        BitReference(int8_t *cell,const uint8_t num):cell(cell), num(num){}
+        BitReference& operator=(bool b){
+            if(b){
+                *cell |=(1u<<num);
+            }else{
+                *cell &=~(1u<<num);
+            }
+            return *this;
+        }
+    };
+public:
+    BitReference operator[](size_t i){
+        return BitReference{arr+i/8,static_cast<uint8_t>(i%8)};
+//        about init list initialization
+//        https://stackoverflow.com/questions/21150067/initialization-difference-with-or-without-curly-braces-in-c
+    }
 
 };
 
-template <f
+template <typename U>
+void f(const U&) = delete;
+
 
 
 
