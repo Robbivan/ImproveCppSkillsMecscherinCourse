@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <deque>
 //template <typename T>
 //const T& maximum(const T& a, const T& b){
 //    return a>b?a:b;
@@ -36,6 +37,16 @@ using mymap = std::map<T,T>;
 // С++14
 template <typename T>
 const T pi = 3.14;
+
+
+
+// Можно
+// 1. Задавать typename параметры по умолчанию
+// 2. можно задавать параметр от 1 шаблона в одной "секции"
+template<typename T, typename Container = std::deque<T> >
+class Stack{
+//...
+};
 
 void on_template_intro() {
     maximum(1,2);
