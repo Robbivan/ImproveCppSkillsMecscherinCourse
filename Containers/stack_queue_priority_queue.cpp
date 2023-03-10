@@ -77,7 +77,7 @@ private:
 // equal_range, lower_bound, upper_bound
 
 
-template<typename Key, typename Value>
+template<typename Key, typename Value, typename Comparator>
 class Map{
 private:
     struct Node{
@@ -89,7 +89,10 @@ private:
 };
 
 // unordered_map
-//
+// используется хэш
+// ищет за O(1)
+
+
 
 
 
