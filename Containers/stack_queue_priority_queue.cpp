@@ -73,6 +73,9 @@ private:
 //  O(2 раза)
 //  |\
 //  O O(по 1 разу для каждого)
+// multimap - хранит несколько экземпляров с одним ключом, работает с итераторами
+// equal_range, lower_bound, upper_bound
+
 
 template<typename Key, typename Value>
 class Map{
