@@ -80,6 +80,12 @@ private:
 // в Node помимо классической pair<const Key, Value> и указателя на next хранится
 // uint32_t cashed - закэшированный хэш, чтобы не пересчитывать хэш при переходе от одного bucket к другому
 // по "большому" составному списку
+// ___
+// Специфичные функции для хэш таблиц:
+// load_factor(средняя загрузка в bucket), rehash(если больше max_load_factor)
+// bucket_count(кол-во bucket), bucket_size(кол-во элементов в конкретном bucket)
+
+
 
 int main(){
     List<int> list;
