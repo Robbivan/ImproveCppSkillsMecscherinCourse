@@ -5,7 +5,8 @@
 struct  S{
     int x = 3;
     double d =0.5;
-
+    S(){}
+    ~S(){};
     static void* operator new(size_t n){ // если n = 0, то все равно будет malloc от 1
         std::cout<< n <<"bytes allocated for struct S\n";
         void* p = malloc(n); // сишная функция выделение памяти
@@ -50,8 +51,27 @@ void operator delete[](void *p){
 }
 
 
+// Перегрузка placement new
+void*operator new(size_t, S*p){
+    return p;
+}
+// placement delete не существует
 
 
+
+// Перегрузка new для своей реализации, теперь все что имеет MyStruct будет использовать данный new
+// остальные стандартный new
+struct MyStruct{};
+MyStruct mys;
+
+void* operator new(size_t n, MyStruct){
+    std::cout<<"Custom operator new called\n";
+    return malloc(n);
+}
+void operator delete (void *p, MyStruct){
+    std::cout<<"Custom operator delete called\n";
+    free(p);
+}
 
 
 
@@ -81,4 +101,8 @@ int main(){
     // placement new
     new(p) S();
 
+    S* tp = new (mys) S();
+    // к сожалению, вручную для удаления
+    operator delete(p,mys);
+    tp->~S();
 }
