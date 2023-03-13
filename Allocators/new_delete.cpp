@@ -49,7 +49,7 @@ void operator delete[](void *p){
     std::cout<<"Array deallocated\n";
     free(p); // сишная функция освобождения
 }
-
+// ------------------------------------------------------------------
 
 // Перегрузка placement new
 void*operator new(size_t, S*p){

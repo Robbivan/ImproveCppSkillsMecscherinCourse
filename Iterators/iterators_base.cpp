@@ -25,9 +25,10 @@
 
 int main(){
     std::vector<int> v = {1,2,3,4,5};
-    std::vector<int>::iterator it =v.begin();
+    std::vector<int>::iterator it =v.begin(); // 1 элемент
+    // а v.end() указывают на элемент после последнего
     std::list<int> lit = {1,2,3,4,5};
-    std::make_d
+//    std::make_d
     *it;
     //since C++11 можно использовать auto для iter
     for(std::vector<int>::iterator iter =v.begin();iter!=v.end();++iter){
