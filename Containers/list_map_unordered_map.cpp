@@ -5,10 +5,10 @@
 #include <set>
 #include <unordered_set>
 
-/// List, map, unordered map
+/// List_bad, map, unordered map
 /// реализация set и unordered set схожа с map (нет value)
 
-// у List нельзя indexing, так как реализовано через Node
+// у List_bad нельзя indexing, так как реализовано через Node
 // insert O(1)
 // Operations:
 // merge - merged two sorted lists
@@ -20,7 +20,7 @@
 
 
 template<typename T>
-class List{
+class List_bad{
 private:
     struct Node{
         T value;
@@ -88,5 +88,5 @@ private:
 
 
 int main(){
-    List<int> list;
+    List_bad<int> list;
 }
