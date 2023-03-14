@@ -126,6 +126,8 @@ public:
         ++sz;
     }
 
+    // emplace_back решение для вектора, однако имеется проблема с тем, что мы просто затолкнули конструктор копирования
+    // на уровень ниже
     template<typename... Args>
     void emplace_back(const Args& ...args){
         if (sz ==cap){
@@ -143,6 +145,7 @@ public:
         //   (arr+sz-1)->~T();
         --sz;
     }
+
 
 };
 

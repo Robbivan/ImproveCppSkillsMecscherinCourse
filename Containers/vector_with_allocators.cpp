@@ -126,12 +126,26 @@ public:
         ++sz;
     }
 
+    // emplace_back решение для вектора, однако имеется проблема с тем, что мы просто затолкнули конструктор копирования
+    // на уровень ниже
+    template<typename... Args>
+    void emplace_back(const Args& ...args){
+        if (sz ==cap){
+            reserve(2*cap);
+        }
+        AllocTraits::construct(alloc,arr+sz, args...); //
+
+        // new(arr+sz) T(value);
+        ++sz;
+    }
+
     void pop_back(){
         // контейнер не проверяет от пустого вектора
         AllocTraits::destroy(alloc,arr+sz-1);
         //   (arr+sz-1)->~T();
         --sz;
     }
+
 
 };
 
