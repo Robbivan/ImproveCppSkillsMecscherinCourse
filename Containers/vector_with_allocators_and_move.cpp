@@ -16,12 +16,12 @@ public:
     Vector<T, Alloc> & operator=(const Vector<T, Alloc>& other){
         if (this == &other) return *this;
         for(size_t i = 0;i < sz;++i){
-           pop_back();
+            pop_back();
         }
         AllocTraits::deallocate(arr,cap);
 
         if(AllocTraits::propagate_on_container_copy_assignment::value
-        && alloc!=other.alloc){
+           && alloc!=other.alloc){
             alloc = other.alloc;
         }
         sz = other.sz;
@@ -126,6 +126,17 @@ public:
         ++sz;
     }
 
+    template<typename... Args>
+    void emplace_back(const Args& ...args){
+        if (sz ==cap){
+            reserve(2*cap);
+        }
+        AllocTraits::construct(alloc,arr+sz, args...); //
+
+        // new(arr+sz) T(value);
+        ++sz;
+    }
+
     void pop_back(){
         // контейнер не проверяет от пустого вектора
         AllocTraits::destroy(alloc,arr+sz-1);
@@ -161,3 +172,4 @@ int main(){
 
 
 }
+
