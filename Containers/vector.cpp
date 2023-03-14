@@ -94,9 +94,7 @@ public:
 
     void pop_back(){
         // контейнер не проверяет от пустого вектора
-        for (size_t i = 0; i < sz;++i){
-            (arr+i)->~T();
-        }
+        (arr+sz-1)->~T();
         --sz;
     }
 
