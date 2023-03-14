@@ -12,6 +12,27 @@ class Vector{
 public:
     Vector(size_t n, const T& element=T(), const Alloc& alloc = Alloc()){}
 
+
+    Vector<T, Alloc> & operator=(const Vector<T, Alloc>& other){
+        if (this == &other) return *this;
+        for(size_t i = 0;i < sz;++i){
+           pop_back();
+        }
+        AllocTraits::deallocate(arr,cap);
+
+        if(AllocTraits::propagate_on_container_copy_assignment::value
+        && alloc!=other.alloc){
+            alloc = other.alloc;
+        }
+        sz = other.sz;
+        cap = other.cap;
+
+        AllocTraits::allocate(alloc,other.cap);
+        for(size_t i = 0;i < sz;++i){
+            push_back(other[i]);
+        }
+        return *this;
+    }
     T& operator[](size_t i){
         return arr[i];
     }
