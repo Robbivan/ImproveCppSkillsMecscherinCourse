@@ -9,11 +9,21 @@
 
 // еще примером может служить reserve vector от нетривиальных объектов, например вектор векторов
 
+
+
+/// Плохой пример
 template<typename T>
-void swap(const T& left, const T& right){
+void swap_bad(const T& left, const T& right){
     T tmp = left; // создается копия, плохо когда объекты с другими объектами
     left = right; // тоже копия, так как например перекладываем векторы
     right = tmp; // тоже копия, так как например перекладываем векторы, итого 3 копии
+}
+/// Хороший пример
+template<typename T>
+void swap_nice(const T& x, const T& y){
+    T tmp = std::move(x);
+    x = std::move(y);
+    y = std::move(tmp);
 }
 
 

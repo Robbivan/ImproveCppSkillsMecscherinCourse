@@ -71,7 +71,7 @@ public:
     //        std::copy(s.str, s.str+sz,str);
     //    }
 
-    //   String& operator=(const String& s){ // Можно упростить через swap and copy
+    //   String& operator=(const String& s){ // Можно упростить через swap_bad and copy
     //        delete[] str;
     //        sz = s.sz;
     //        std::copy(s.str, s.str+sz,str);

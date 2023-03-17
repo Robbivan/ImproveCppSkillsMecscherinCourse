@@ -3,10 +3,10 @@
 // Magic function std::move and its applications
 
 template<typename T>
-void swap(const T& x, const T& y){
-    T tmp = std::move(x);
-    x = std::move(y);
-    y = std::move(tmp);
+void swap_bad(const T& left, const T& right){
+    T tmp = std::move(left);
+    left = std::move(right);
+    right = std::move(tmp);
 }
 
 // Move constructor в StringClassMove
