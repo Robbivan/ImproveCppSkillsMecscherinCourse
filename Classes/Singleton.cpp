@@ -1,6 +1,5 @@
 #include <iostream>
 class Singleton{
-    static const int x = 1; // double нельзя внутри класса, только int
     static Singleton *obj; // выносим за пределы класса инициализацию
     Singleton() = default;
 public:

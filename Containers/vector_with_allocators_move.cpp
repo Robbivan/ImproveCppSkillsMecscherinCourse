@@ -94,7 +94,7 @@ public:
         size_t i = 0;
         try{
             for (; i < sz; ++i){
-                AllocTraits::construct(alloc, newarr+i,arr[i]);
+                AllocTraits::construct(alloc, newarr+i,std::move(arr[i]));
                 // new(newarr+i) T(arr[i]);
             }
         }
@@ -123,6 +123,14 @@ public:
         AllocTraits::construct(alloc,arr+sz, value);
 
         // new(arr+sz) T(value);
+        ++sz;
+    }
+    /// на move работает
+    void push_back(T&& value){
+        if (sz ==cap){
+            reserve(2*cap);
+        }
+        AllocTraits::construct(alloc,arr+sz, std::move(value));
         ++sz;
     }
 

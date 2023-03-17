@@ -27,15 +27,18 @@ public:
         memset(str,symbol,sz); // установка вместо for
     }
     /// move-конструктор
-    String(String&& s):sz(s.sz),str(s.str){
+    // String(String&& s) noexcept :sz(s.sz),str(s.str)= default; //
+    // Если вы реализовали свой нетривиальные конструктор копирования, то move constructor
+    // не будет генерироваться, если явно не попросить (для оператора присваивания аналогично)
+    String(String&& s) noexcept :sz(s.sz),str(s.str){
         s.str = nullptr;
         s.sz = 0;
     }
+    // для сишного указателя будет работать некорректно
+    // для shared_ptr все ок, так как есть конструктор копирования перемещением
 
 
-
-
-
+    //
 
 
 
@@ -73,9 +76,18 @@ public:
     //        sz = s.sz;
     //        std::copy(s.str, s.str+sz,str);
     //    }
-    String& operator=(String s){
-        swap(s);
-        return (*this);
+    String& operator=(const String& s){
+        String copy = s;
+        swap(copy);
+        return *this;
+    }
+//    String& operator=(String&& s)=default; // умеет генерировать его сам
+
+    /// assignment move operator
+    String& operator=(String&& s){
+        String new_s = std::move(s); // вызов move-constructor
+        swap( new_s);
+        return *this;
     }
     void swap(String& s){
         std::swap(sz,s.sz);

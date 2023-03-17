@@ -9,7 +9,7 @@ void swap(const T& x, const T& y){
     y = std::move(tmp);
 }
 
-// Move constructor and
+// Move constructor в StringClassMove
 
 int main(){
     std::string str = "abcdef";
