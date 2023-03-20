@@ -5,7 +5,7 @@
 
 // std::move позволяет создать rvalue ссылку на уже существующий объект (т.е. делает объект rvalue)
 template<typename T>
-void swap_bad(const T& left, const T& right){
+void swap(const T& left, const T& right){
     T tmp = std::move(left);
     left = std::move(right);
     right = std::move(tmp);
@@ -19,4 +19,7 @@ int main(){
 
     std::string str2 = std::move(str);
     std::cout<<str.size()<<'\n';
+
+    // std::move(ss);
+    // f(getObject())
 }
