@@ -14,8 +14,10 @@
 // type& - lvalue-references
 
 //             expressions
-//          /       |       \
-//      lvalue  xvalue   rvalue
+//          /               \
+//      lvalue                rvalue
+//                          /        \
+//                          xvalue   prvalue(pure)
 
 // примеры классификации внутри презентации
 int main(){
