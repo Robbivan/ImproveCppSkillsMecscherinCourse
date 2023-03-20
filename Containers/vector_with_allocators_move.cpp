@@ -137,11 +137,11 @@ public:
     // emplace_back решение для вектора, однако имеется проблема с тем, что мы просто затолкнули конструктор копирования
     // на уровень ниже
     template<typename... Args>
-    void emplace_back(const Args& ...args){
+    void emplace_back(Args&& ...args){ // добавили универсальную ссылку
         if (sz ==cap){
             reserve(2*cap);
         }
-        AllocTraits::construct(alloc,arr+sz, args...); //
+        AllocTraits::construct(alloc,arr+sz, std::forward<Args>(args)...); //
 
         // new(arr+sz) T(value);
         ++sz;
