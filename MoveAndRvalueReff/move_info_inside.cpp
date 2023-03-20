@@ -8,7 +8,16 @@
 // для right: временный объект, например в std::swap() или
 
 // Лучшее определение
-// lvalue и rvalue всегда зависят от контекста
+// lvalue и rvalue всегда зависят от контекста и являются видами выражений, а не объектами или типами
+
+// type&& - rvalue-references,
+// type& - lvalue-references
+
+//             expressions
+//          /       |       \
+//      lvalue  xvalue   rvalue
+
+// примеры классификации внутри презентации
 int main(){
 
 }
