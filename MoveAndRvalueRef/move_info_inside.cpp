@@ -17,7 +17,7 @@
 //          /               \
 //      lvalue                rvalue
 //                          /        \
-//                          xvalue   prvalue(pure)
+//                        xvalue   prvalue(pure)
 
 // примеры классификации внутри презентации
 int main(){
