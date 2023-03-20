@@ -26,8 +26,9 @@ struct remove_const<const T>{
     using type = T;
 };
 
+// частичная специализация для remove references
 template <typename T>
-struct remove_const<T&>{
+struct remove_const<T&>{ /// удаление ссылки для move
     using type = T;
 };
 
