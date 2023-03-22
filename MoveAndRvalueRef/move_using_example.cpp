@@ -15,10 +15,10 @@ void swap(const T& left, const T& right){
 
 int main(){
     std::string str = "abcdef";
-    std::cout<<str.size()<<'\n';
+    std::cout<<str.size()<<'\n'; // размер строки
 
     std::string str2 = std::move(str);
-    std::cout<<str.size()<<'\n';
+    std::cout<<str.size()<<'\n'; // плохое использование, поскольку уже был сделан move, соот. размер будет 0
 
     // std::move(ss);
     // f(getObject())
