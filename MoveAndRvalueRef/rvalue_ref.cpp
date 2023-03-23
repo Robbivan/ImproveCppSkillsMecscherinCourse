@@ -1,6 +1,9 @@
 #include <iostream>
 
 /// чем можно и нельзя инициализировать rvalue ссылки
+
+// move_if_noexcept в vector_allocators_move
+
 int main(){
     int x = 0;
     int& rx = x;

@@ -3,8 +3,6 @@
 #include <list>
 #include <iterator>
 
-
-
 template <typename Iterator, typename IterCategory>
 void my_advance_helper(Iterator& iter, int n, IterCategory){
     for(int i = 0;i<n;++i,++iter){}

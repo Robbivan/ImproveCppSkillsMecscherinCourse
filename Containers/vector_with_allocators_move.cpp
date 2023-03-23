@@ -94,7 +94,12 @@ public:
         size_t i = 0;
         try{
             for (; i < sz; ++i){
-                AllocTraits::construct(alloc, newarr+i,std::move(arr[i]));
+                AllocTraits::construct(alloc, newarr+i,std::move_if_noexcept(arr[i])); /// если не помечен
+                /// конструктор копирования перемещением noexcept, то копирует, а не перемещает
+                // если конструктор копирования перемещением явно не задан,
+                // то будет перемещение (ухудшение безопасности)
+
+
                 // new(newarr+i) T(arr[i]);
             }
         }
