@@ -23,11 +23,11 @@ public:
         *this +=1;
         return *this;
     }
-//    Complex& operator++(int){ //Костыль Страуструпа, тут еще очень хорошо видно, что возвращается именно копия не увел на 1
-//        Complex copy = *this;
-//        ++*this;
-//        return copy;
-//    }
+    Complex operator++(int) { //Костыль Страуструпа, тут еще очень хорошо видно, что возвращается именно копия не увел на 1
+        Complex copy = *this;
+        ++*this;
+        return copy;
+    }
 //    bool operator<(const Complex& a,const Complex& b){
 //        return a.re*a.re<b.re*b.re;
 //    }
