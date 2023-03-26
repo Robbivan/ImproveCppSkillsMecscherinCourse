@@ -11,7 +11,7 @@ template<typename T> // классический трюк Скотта-Майе�
 void foo(T) = delete; // так как отбрасываются & и &&
 
 template<typename T>
-void foo_s() = delete; // так как обрасываются
+void foo_s() = delete;
 
 
 auto ff(int&x){
