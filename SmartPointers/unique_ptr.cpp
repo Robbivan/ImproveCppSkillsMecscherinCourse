@@ -6,6 +6,11 @@
 
 /// позволяют делать move
 
+template<typename T, typename ...Args>
+std::unique_ptr<T> make_unique(Args&&... args){
+    return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+};
+
 
 void f_f(){
     std::unique_ptr<int> p(new int(5));
@@ -15,8 +20,8 @@ void f_f(){
 
     std::unique_ptr<int[]>p_array(new int[5]); // unique указатель на массив
 
-    // аналогично и с shared_ptr, можно присвоить это ок, так как подсчет ссылок будет в одном месте,
-    // но 2 разных подсчета на двух разных shared_ptr = утечка
+    // аналогично и с Shared_ptr, можно присвоить это ок, так как подсчет ссылок будет в одном месте,
+    // но 2 разных подсчета на двух разных Shared_ptr = утечка
 
 
 

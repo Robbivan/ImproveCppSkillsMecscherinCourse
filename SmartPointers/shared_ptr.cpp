@@ -1,20 +1,30 @@
 #include <iostream>
 #include <memory>
 
-
+// Shared_ptr implementation
 template <typename T>
-class shared_ptr{
+class Shared_ptr{
     T*ptr = nullptr;
     size_t* count = nullptr;
+    template<typename U, typename ...Args>
+    struct ControlBlock{
+        T object;
+        size_t count;
+        ControlBlock(size_t count, Args&& ...args){
+            //...
+        }
+    };
 
+    Shared_ptr(ControlBlock<T>* ptr): ptr(&ptr->object), count(&ptr->count){}
 public:
-    explicit shared_ptr(T* ptr_):ptr(ptr_),count(new size_t(1)){}
+    explicit Shared_ptr(T* ptr_): ptr(ptr_), count(new size_t(1)){}
+
 
     size_t use_count(/*...*/) const noexcept{}
 
     T* get() const noexcept{}
-
-    ~shared_ptr(){
+    int value;
+    ~Shared_ptr(){
         if(!count) return;
         --*count;
         if(!*count){
@@ -22,7 +32,52 @@ public:
             delete count;
         }
     }
+    template<typename U,typename ...Args>
+    friend std::shared_ptr<U> make_shared(Args&&... args);
 };
+
+template<typename T, typename... Args>
+std::shared_ptr<T> make_shared(Args &&... args) {
+    auto p = new Shared_ptr<T>::template ControlBlock<T>(1, std::forward<Args>(args)...);
+    return std::shared_ptr<T>(p);
+}
+
+//template<typename U, typename ...Args>
+//std::shared_ptr<U> make_shared(Args&&... args){
+//    use_count()
+//    auto p =new ControlBlock<U>()
+//    return std::shared_ptr<T>(new T(std::forward<Args>(args)...));
+//
+//}
+
+
+void check_nice(){
+    // плохой код, так как промежуточный сишный указатель
+//    int* p = new int(5);
+//    Shared_ptr<int> sp(p);
+//    Shared_ptr<int> sp(new int(5)); // так тоже не очень, так как new вручную
+
+    auto p = std::make_unique<int>(5); // так четко определен порядок
+    // как и emplace создают сами объекты в динамической памяти
+}
+
+
+int f(int x){
+    return x+1;
+}
+
+void g(const std::shared_ptr<int>& sp, int x){
+
+}
+
+void h(){
+    g(std::shared_ptr<int>(new int(5)), f(0)); // ПЛОХО, так как неизвестен порядок, f может вторгнуться
+    // С++17 поправили эту проблему
+}
+
+
+
 int main(){
+
 
 }
