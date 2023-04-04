@@ -89,10 +89,12 @@ int main(){
 //    String(10);
     {
         String s(10,'a'); // Равносильно   String s = String(10)
+        std::cout << s;
         //    Конструктор копирования
         String ss = s; //вот так будет shallow copy
 
     }
     String s{10,'a'}; //здесь выведет initializer_list
+    std::cout << s;
 
 }
