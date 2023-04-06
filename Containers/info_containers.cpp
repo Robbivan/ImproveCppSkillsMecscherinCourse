@@ -25,7 +25,7 @@
 
 // list и forward_list
 // indexing [] - нет
-// push_front - O(1) always
+// push_front (push_back для list)- O(1) always
 // insert, erase - O(1)  (при уже "готовом" итераторе, имеющим нужное значение)
 // find - нет
 // iter category - bidirectional / forward
@@ -55,4 +55,6 @@ int main(){
         std::cout<<iter<<' ';
     }
     f_lst.pop_front();
+    std::list<int> lst{1,2,3};
+//    lst.push_back();
 }
