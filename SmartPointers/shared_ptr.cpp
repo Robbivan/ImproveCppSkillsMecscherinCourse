@@ -16,8 +16,13 @@ class Shared_ptr{
     };
 
     Shared_ptr(ControlBlock<T>* ptr): ptr(&ptr->object), count(&ptr->count){}
+
 public:
-    explicit Shared_ptr(T* ptr_): ptr(ptr_), count(new size_t(1)){}
+    explicit Shared_ptr(T* ptr_): ptr(ptr_), count(new size_t(1)){
+        if constexpr (std::is_base_of_v<std::enable_shared_from_this<T>,T>){
+            ptr->wptr = *this;
+        }
+    }
 
 
     size_t use_count(/*...*/) const noexcept{}
@@ -80,6 +85,9 @@ void h(){
 // в языках типа python, java аналогичная проблема (решается в каждом garbage collector по-своему)
 // в С++ решение через weak_ptr
 
+
+// иногда нужно не удалять в конце, то на что указывает shared_ptr, а например закрыть файл, то есть можно делать свой
+// кастомный делитер
 int main(){
 
 
