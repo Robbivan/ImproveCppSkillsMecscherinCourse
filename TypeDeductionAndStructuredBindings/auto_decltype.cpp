@@ -40,7 +40,7 @@ auto get(const Container& container, size_t index)-> decltype(container[index])
 
 
 // since C++14
-template <typename T>
+template <typename T> // Хотим выводить разные типы
 decltype(auto) h(const T& x){
     std::cout<<"some text";
     return f(x);
