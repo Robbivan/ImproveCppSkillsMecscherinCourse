@@ -18,6 +18,12 @@ template <typename U>
 void ff(const U&) = delete;
 
 
+// Версия для move семантики с decltype
+template<typename T>
+void foo_s() = delete;
+// foo_s<decltype(x)>();
+
+
 int main(){
     int x =0;
 
