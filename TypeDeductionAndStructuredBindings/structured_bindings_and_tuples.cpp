@@ -10,7 +10,7 @@ int main(){
 
     std::pair<int, std::string> p{5,"abc"};
 
-    // since C++17
+    // since C++17 pair
     auto [a,b] = p;
     std::cout << a << b << '\n';
 
