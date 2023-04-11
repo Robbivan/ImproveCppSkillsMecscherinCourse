@@ -1,6 +1,5 @@
 #include <iostream>
 
-/// есть массив в compile: integer sequence
 
 template<size_t N, size_t D>
 struct IsPrimeHelper{
