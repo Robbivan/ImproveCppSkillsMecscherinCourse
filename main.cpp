@@ -60,5 +60,7 @@ void Casts(){
 int main() {
     using std::cout;
     def_sort(); // из algorithm
+
+
     return 0;
 }
