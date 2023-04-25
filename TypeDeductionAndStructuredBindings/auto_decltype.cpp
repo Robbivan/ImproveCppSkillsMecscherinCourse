@@ -108,4 +108,9 @@ int main(){
 
 
     decltype(auto) t2 = yy;
+
+
+    // Можно делать свои правила по работе с шаблонами относительно конструктора
+    // user-defined deduction guides (since C++17)
+
 }
