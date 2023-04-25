@@ -3,7 +3,10 @@
 
 /// std::function (since C++11)
 struct S{
-
+    int y = 1;
+    void goo(int x){
+        std::cout<<x+y<<'\n';
+    }
     bool operator()(int x, int y)const{
         std::cout<<"hello";
         return x>y;
@@ -29,5 +32,12 @@ int main(){
     f = g;
 
     f(5,6);
+
+    void (S::*ps)(int)=&S::goo;
+    S s;
+    std::function<void(S&, int)> memfn = &S::goo; // аналог
+
+    memfn(s,5);
+
 
 }
