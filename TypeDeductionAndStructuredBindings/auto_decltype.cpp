@@ -1,6 +1,6 @@
 #include <iostream>
+#include <vector>
 #include "unordered_map"
-
 /// type deduction (since C++11)
 
 int&f (int& x){
@@ -112,5 +112,15 @@ int main(){
 
     // Можно делать свои правила по работе с шаблонами относительно конструктора
     // user-defined deduction guides (since C++17)
+
+    // CTAD
+    std::pair pp(5,7);
+    // без шаблоных параметров, особенно полезно для пар и tuple
+
+    std::vector v1{5,7,12};
+    std::vector v2(v1.begin(),v1.end()); // это будет vector<int>
+    std::vector v3{v1.begin(),v1.end()}; // это будет вектор init, то есть vector<int>::iter
+
+
 
 }
