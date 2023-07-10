@@ -18,6 +18,7 @@ int main(){
     auto inf2 = [a](int x, int y){
         return x+a<y;
     };
+
     std::cout<< sizeof(inf2); // 4 байта, равный одному полю int
 
 
